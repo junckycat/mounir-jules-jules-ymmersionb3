@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-products-header',
@@ -6,6 +6,15 @@ import { Component } from '@angular/core';
   styles: [
   ]
 })
-export class ProductsHeaderComponent {
+export class ProductsHeaderComponent implements OnInit{
+  sort ='desc';
 
+  constructor(){ }
+
+  ngOnInit(): void {
+  }
+
+  onSortUpdated(newSort: string): void{
+    this.sort = newSort;
+  }
 }
